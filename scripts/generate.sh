@@ -132,3 +132,13 @@ RUN apt-get -y install libgconf-2-4 \
   && mv chromedriver /usr/local/bin/chromedriver \
   && chmod +x /usr/local/bin/chromedriver"
 fi
+
+# custom installations start here
+echo "RUN apt-get install -y libxml2-dev && docker-php-ext-install soap"
+echo "RUN apt-get install -y libmagickwand-dev --no-install-recommends && (printf \"\n\" | pecl install imagick) && docker-php-ext-enable imagick"
+echo "RUN pecl install redis && docker-php-ext-enable redis"
+echo "RUN pecl install mongodb && docker-php-ext-enable mongodb"
+echo "RUN docker-php-ext-install bcmath"
+echo "RUN apt-get install -y libpng-dev && docker-php-ext-install gd"
+echo "RUN apt-get install -y libicu-dev && docker-php-ext-install intl"
+echo "npm install -g bower"
