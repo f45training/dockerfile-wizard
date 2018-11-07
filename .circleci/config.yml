@@ -17,7 +17,7 @@ image_config: &image_config
 
   # RUBY_VERSION_NUM: # pick a version from https://cache.ruby-lang.org/pub/ruby
 
-  NODE_VERSION_NUM: latest-v11.x
+  NODE_VERSION_NUM: 11.0.0
 
   # PYTHON_VERSION_NUM: # pick a version from https://python.org/ftp/python
 
@@ -84,7 +84,7 @@ workflows:
   version: 2
   dockerfile_wizard:
     jobs:
-      - build:
+      - build
           # context: org-global
 
       - test_image:
